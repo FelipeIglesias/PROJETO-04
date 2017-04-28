@@ -18,5 +18,19 @@ public class Database {
         return fornecedores;
     }
     
+    private static ArrayList<Clientes> clientes;
+    public static ArrayList<Clientes> getClientes(){
+        if(clientes == null){
+            clientes = new  ArrayList<>();
+            Clientes c1 = new Clientes();
+            c1.setClientes("Pedrinho","999.888.777-66","99.888.777-6","pedrinho@email.com","1111-2222","Rua Um");
+            Clientes c2 = new Clientes();
+            c2.setClientes("Joãozinho","111.222.333-44","22.333.444-5","joaozinho@email.com","1234-5678","Rua Dois");
+            clientes.add(c1);
+            clientes.add(c2);
+        }
+        return clientes;
+    }
+    
     
 }
