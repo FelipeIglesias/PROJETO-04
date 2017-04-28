@@ -9,6 +9,17 @@ public class Fornecedores {
     private String telefone;
     private String endereco;
 
+    public void setFornecedores(String nome, String razaoSocial, String cnpj, String email, String telefone, String endereco) {
+        this.setNome(nome);
+        this.setRazaoSocial(razaoSocial);
+        this.setCnpj(cnpj);
+        this.setEmail(email);
+        this.setTelefone(telefone);
+        this.setEndereco(endereco);
+    }
+
+    
+    
     
     public String getNome() {
         return nome;
