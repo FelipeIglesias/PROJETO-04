@@ -3,7 +3,9 @@
     Created on : 28/04/2017, 19:12:00
     Author     : felipe
 --%>
-
+<%@page import="java.br.com.fatecpg.Clientes"%>
+<%@page import="java.br.com.fatecpg.Fornecedores"%>
+<%@page import="java.br.com.fatecpg.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
