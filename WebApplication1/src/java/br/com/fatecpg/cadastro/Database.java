@@ -18,6 +18,7 @@ public class Database {
         return fornecedores;
     }
     
+    public static Cliente clt;
     private static ArrayList<Cliente> cliente;
     public static ArrayList<Cliente> getCliente(){
         if(cliente == null){
@@ -32,5 +33,15 @@ public class Database {
         return cliente;
     }
     
+    public static Cliente alteraCliente(Cliente c, String nome, String cpf, String rg, String email, String telefone, String endereco){     
+        c.setNome(nome);
+        c.setCpf(cpf);
+        c.setRg(rg);
+        c.setEmail(email);
+        c.setTelefone(telefone);
+        c.setEndereco(endereco);
+        
+        return c;
+    }
     
 }

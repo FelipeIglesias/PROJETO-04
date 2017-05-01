@@ -3,13 +3,11 @@
     Created on : 28/04/2017, 19:12:00
     Author     : felipe
 --%>
-<%@page import="javax.swing.JOptionPane"%>
 <%@page import="br.com.fatecpg.cadastro.Cliente"%>
 <%@page import="br.com.fatecpg.cadastro.Fornecedores"%>
 <%@page import="br.com.fatecpg.cadastro.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%int pegaPosicao = -1;%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +20,6 @@
             <fildset>
                 <legend><h3>Novo Cliente</h3></legend>
                 <form>
-                    <label visible="false">Iinsira os novos valores do contato</label>
                     Nome: <br>
                     <input type="text" name="nome"/><br>
                     CPF: <br> 
@@ -48,21 +45,12 @@
                         String telefone = request.getParameter("telefone");
                         String endereco = request.getParameter("endereco");
 
-                        if(pegaPosicao != -1){
-                            Cliente c = Database.getCliente().get(pegaPosicao);
-                            c.setNome(nome);
-                            c.setCpf(cpf);
-                            c.setRg(rg);
-                            c.setEmail(email);
-                            c.setTelefone(telefone);
-                            c.setEndereco(endereco);
-                            pegaPosicao = -1;
-                        } else{
                         
-                            Cliente c = new Cliente();
-                            c.setCliente(nome, cpf, rg, email, telefone, endereco);
-                            Database.getCliente().add(c);
-                        }
+                        
+                       Cliente c = new Cliente();
+                       c.setCliente(nome, cpf, rg, email, telefone, endereco);
+                       Database.getCliente().add(c);
+                        
                         response.sendRedirect(request.getRequestURI());
                     } else if (request.getParameter("excluir") != null) {
                         int i = Integer.parseInt(request.getParameter("id"));
@@ -70,15 +58,7 @@
                         response.sendRedirect(request.getRequestURI());
                     } else if(request.getParameter("alterar")!=null){
                         int i = Integer.parseInt(request.getParameter("id"));
-                        pegaPosicao = i;
-                        Cliente c = Database.getCliente().get(i);
-                        c.setNome("");
-                        c.setCpf("");
-                        c.setRg("");
-                        c.setEmail("");
-                        c.setTelefone("");
-                        c.setEndereco("");
-                        response.sendRedirect(request.getRequestURI());
+                        Database.clt = Database.getCliente().get(i);
                     }
                 } catch (Exception ex) {%>
             <div style="color: red;">
@@ -113,13 +93,12 @@
                         <form>
                             <input type="hidden" name="id" value="<%=i%>"/>
                             <input type="submit" name="excluir" value="Excluir"/>
-                            <input type="submit" name="alterar" value="Alterar"/>
+                            <a href="alteraCliente.jsp"><input type="button"name="alterar" value="Alterar"/></a>
                         </form>
                     </td>
                 </tr>
                 <%}%>
             </table>
-            <%=pegaPosicao%>
         </div>
     </body>
 </html>
