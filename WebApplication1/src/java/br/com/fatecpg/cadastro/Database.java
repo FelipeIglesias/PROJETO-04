@@ -19,6 +19,8 @@ public class Database {
     }
     
     public static Cliente clt;
+    public static int pegaIndice;
+    
     private static ArrayList<Cliente> cliente;
     public static ArrayList<Cliente> getCliente(){
         if(cliente == null){

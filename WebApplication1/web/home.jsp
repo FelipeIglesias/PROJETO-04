@@ -37,6 +37,7 @@
             </fildset>
             <%
                 try {
+                    System.out.println("Teste alterar...");
                     if (request.getParameter("incluir") != null) {
                         String nome = request.getParameter("nome");
                         String cpf = request.getParameter("cpf");
@@ -58,7 +59,9 @@
                         response.sendRedirect(request.getRequestURI());
                     } else if(request.getParameter("alterar")!=null){
                         int i = Integer.parseInt(request.getParameter("id"));
+                        Database.pegaIndice = i;
                         Database.clt = Database.getCliente().get(i);
+                        response.sendRedirect("alteraCliente.jsp"); //redireciona para a página de alteração após alterar a variável de cliente a ser alterado
                     }
                 } catch (Exception ex) {%>
             <div style="color: red;">
@@ -93,7 +96,7 @@
                         <form>
                             <input type="hidden" name="id" value="<%=i%>"/>
                             <input type="submit" name="excluir" value="Excluir"/>
-                            <a href="alteraCliente.jsp"><input type="button"name="alterar" value="Alterar"/></a>
+                            <a href="alteraCliente.jsp"><input type="submit"name="alterar" value="Alterar" /></a>
                         </form>
                     </td>
                 </tr>
