@@ -20,6 +20,17 @@ public class Database {
         return fornecedores;
     }
     
+    public static Fornecedores alteraFornecedor(Fornecedores f, String nome, String cnpj, String razaoSocial, String email, String telefone, String endereco){     
+        f.setNome(nome);
+        f.setCnpj(cnpj);
+        f.setRazaoSocial(razaoSocial);
+        f.setEmail(email);
+        f.setTelefone(telefone);
+        f.setEndereco(endereco);
+        
+        return f;
+    }
+    
     public static Cliente clt;
     public static int pegaIndice;
     
