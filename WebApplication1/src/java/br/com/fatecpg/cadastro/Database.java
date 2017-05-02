@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /*@author Felipe*/
 public class Database {
+    public static Fornecedores forn;
+    public static int pegaPosicao;
     private static ArrayList<Fornecedores> fornecedores;
     public static ArrayList<Fornecedores> getFornecedores(){
         if(fornecedores == null){
