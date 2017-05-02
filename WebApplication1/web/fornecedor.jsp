@@ -17,7 +17,7 @@
         <h1>POO</h1>
         <div>
             <fildset>
-                <legend><h3>Novo Fornecedor</h3></legend>
+                <legend><h3>Novo</h3></legend>
                 <form>
                     Nome: <br>
                     <input type="text" name="nome"/><br>
@@ -53,6 +53,11 @@
                         int i = Integer.parseInt(id);
                         Database.getFornecedores().remove(i);
                         response.sendRedirect(request.getRequestURI());
+                    } else if (request.getParameter("alterar")!=null){
+                        int i = Integer.parseInt(request.getParameter("id"));
+                        Database.pegaPosicao = i;
+                        Database.forn = Database.getFornecedores().get(i);
+                        response.sendRedirect("alteraFornecedor.jsp");
                     }
                 } catch (Exception ex) {%>
             <div style="color: red;">
@@ -87,6 +92,7 @@
                         <form>
                             <input type="hidden" name="id" value="<%=i%>"/>
                             <input type="submit" name="excluir" value="Excluir"/>
+                            <input type="submit" name="alterar" value="Alterar">
                         </form>
                     </td>
                 </tr>
