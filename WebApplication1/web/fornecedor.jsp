@@ -55,7 +55,7 @@
                         response.sendRedirect(request.getRequestURI());
                     } else if (request.getParameter("alterar")!=null){
                         int i = Integer.parseInt(request.getParameter("id"));
-                        Database.pegaPosicao = i;
+                        Database.pegaIndiceF = i;
                         Database.forn = Database.getFornecedores().get(i);
                         response.sendRedirect("alteraFornecedor.jsp");
                     }

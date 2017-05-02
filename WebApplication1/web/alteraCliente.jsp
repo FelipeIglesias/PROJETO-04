@@ -28,7 +28,7 @@
                     
                     <%try{
                         if(request.getParameter("confirmar")!=null){
-                            Database.alteraCliente(Database.getCliente().get(Database.pegaIndice), novoNome, novoCpf, novoRg, novoEmail, novoTelefone, novoEndereco);
+                            Database.alteraCliente(Database.getCliente().get(Database.pegaIndiceC), novoNome, novoCpf, novoRg, novoEmail, novoTelefone, novoEndereco);
                             response.sendRedirect("home.jsp");
                         }
                     }catch(Exception ex){ %>
@@ -39,6 +39,16 @@
                     Nome: <br>
                     <input type="text" name="novoNome" value="<%=Database.clt.getNome()%>"/><br>
                     CPF: <br> 
+                    <%try{
+                        if(request.getParameter("confirmar")!=null){
+                            Database.alteraCliente(Database.getCliente().get(Database.pegaIndiceC), novoNome, novoCpf, novoRg, novoEmail, novoTelefone, novoEndereco);
+                            response.sendRedirect("home.jsp");
+                        }
+                    }catch(Exception ex){ %>
+                        <div style="color: red;">
+                            Erro: <%= ex.getMessage()%>
+                        </div>
+                    <%}%>
                     <input type="text" name="novoCpf" value="<%=Database.clt.getCpf()%>"/><br>
                     RG: <br>
                     <input type="text" name="novoRg" value="<%=Database.clt.getRg()%>"/><br>
@@ -47,7 +57,7 @@
                     Telefone: <br>
                     <input type="text" name="novoTelefone" value="<%=Database.clt.getTelefone()%>"/><br>
                     Endereço: <br>
-                    <input type="text" name="novoEndereco" value="<%=Database.clt.getEndereco()%>"/><br>*/
+                    <input type="text" name="novoEndereco" value="<%=Database.clt.getEndereco()%>"/><br>
                     <input type="submit" name="confirmar" value="Confirmar"/><br>
                 </form>
             </fildset>

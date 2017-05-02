@@ -59,7 +59,7 @@
                         response.sendRedirect(request.getRequestURI());
                     } else if(request.getParameter("alterar")!=null){
                         int i = Integer.parseInt(request.getParameter("id"));
-                        Database.pegaIndice = i;
+                        Database.pegaIndiceC = i;
                         Database.clt = Database.getCliente().get(i);
                         response.sendRedirect("alteraCliente.jsp"); //redireciona para a página de alteração após alterar a variável de cliente a ser alterado
                     }

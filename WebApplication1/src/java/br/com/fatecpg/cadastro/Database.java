@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /*@author Felipe*/
 public class Database {
     public static Fornecedores forn;
-    public static int pegaPosicao;
+    public static int pegaIndiceF;
     private static ArrayList<Fornecedores> fornecedores;
     public static ArrayList<Fornecedores> getFornecedores(){
         if(fornecedores == null){
@@ -32,7 +32,7 @@ public class Database {
     }
     
     public static Cliente clt;
-    public static int pegaIndice;
+    public static int pegaIndiceC;
     
     private static ArrayList<Cliente> cliente;
     public static ArrayList<Cliente> getCliente(){
