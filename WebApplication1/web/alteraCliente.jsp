@@ -29,7 +29,7 @@
                     <%try{
                         if(request.getParameter("confirmar")!=null){
                             Database.alteraCliente(Database.getCliente().get(Database.pegaIndiceC), novoNome, novoCpf, novoRg, novoEmail, novoTelefone, novoEndereco);
-                            response.sendRedirect("home.jsp");
+                            response.sendRedirect("clientes.jsp");
                         }
                     }catch(Exception ex){ %>
                         <div style="color: red;">
