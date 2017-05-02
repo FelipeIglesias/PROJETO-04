@@ -33,7 +33,6 @@
                             response.sendRedirect("fornecedor.jsp");
                         }
                     }catch(Exception ex){ %>
-                    
                         <div style="color: red;">
                             Erro: <%= ex.getMessage()%>
                         </div>
