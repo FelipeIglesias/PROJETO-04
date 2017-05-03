@@ -7,34 +7,42 @@
 <%@page import="br.com.fatecpg.cadastro.Fornecedores"%>
 <%@page import="br.com.fatecpg.cadastro.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="WEB-INF/jspf/menu.jspf" %>
+        
+<form>
+    <h2>Novo Cliente</h2>
+    <fieldset class="row">
+        <legend><strong>Dados do Cliente</strong></legend>
+        <div class="col s12 m12">        
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required/>
+        </div>
+        <div class="col s12 m6">
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" required/>
+        </div>
+        <div class="col s12 m6">
+            <label for="rg">RG</label>
+            <input type="text" name="rg" required/>
+        </div>
+        <div class="col s12 m6">
+            <label for="email">Email</label>
+            <input type="email" name="email" required/>
+        </div>
+        <div class="col s12 m6">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" required/>
+        </div>            
+        <div class="col s12 m12">
+            <label for="edenreco">Endereço</label>
+            <input type="text" name="endereco" required/>
+        </div>
+        <div class="col s12 m12 center-align">
+            <input class="btn btn-large waves-effect waves-light" type="submit" name="incluir" value="Incluir"/>
+        </div>
+    </fildset>
+</form>   
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>POO</h1>
-        <div>
-            <fildset>
-                <legend><h3>Novo Cliente</h3></legend>
-                <form>
-                    Nome: <br>
-                    <input type="text" name="nome"/><br>
-                    CPF: <br> 
-                    <input type="text" name="cpf"/><br>
-                    RG: <br>
-                    <input type="text" name="rg"/><br>
-                    Email: <br>
-                    <input type="text" name="email"/><br>
-                    Telefone: <br>
-                    <input type="text" name="telefone"/><br>
-                    Endereço: <br>
-                    <input type="text" name="endereco"/><br>
-                    <input type="submit" name="incluir" value="Incluir"/><br>
-                </form>
-            </fildset>
             <%
                 try {
                     System.out.println("Teste alterar...");
@@ -70,8 +78,10 @@
             <%}%>
             <br/>
         </div>
+        <br>
         <div>
-            <table border="1">
+            <table class="centered highlight responsive-table">
+                <thead>
                 <tr>
                     <th>Indice</th>
                     <th>Nome</th>
@@ -82,6 +92,7 @@
                     <th>Endereço</th>
                     <th>Comandos</th>
                 </tr>
+                </thead>
                 <%for (int i = 0; i < Database.getCliente().size(); i++) {%>
                 <%Cliente c = Database.getCliente().get(i);%>
                 <tr>
@@ -95,13 +106,16 @@
                     <td>
                         <form>
                             <input type="hidden" name="id" value="<%=i%>"/>
-                            <input type="submit" name="excluir" value="Excluir"/>
-                            <a href="alteraCliente.jsp"><input type="submit"name="alterar" value="Alterar" /></a>
+                            <input type="submit" name="excluir" value="Excluir" 
+                                   class="btn red waves-effect waves-light"/>
+                            <a href="alteraCliente.jsp"><input type="submit"
+                                   name="alterar" value="Alterar" class="btn blue waves-effect waves-light"/>
                         </form>
                     </td>
                 </tr>
                 <%}%>
             </table>
         </div>
+        <%@include file="WEB-INF/jspf/rodape.jspf" %>
     </body>
 </html>
