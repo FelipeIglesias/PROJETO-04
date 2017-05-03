@@ -30,12 +30,12 @@
             <input type="email" name="email" required/>
         </div>
         <div class="col s12 m6">        
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" required/>
+            <label for="nome">Telefone</label>
+            <input type="text" name="telefone" required/>
         </div>
         <div class="col s12 m12">        
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" required/>
+            <label for="nome">Endereço</label>
+            <input type="text" name="endereco" required/>
         </div>
         <div class="col s12 m12 center-align">
             <input class="btn btn-large waves-effect waves-light" type="submit" name="incluir" value="Incluir"/>
