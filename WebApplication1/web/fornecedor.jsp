@@ -13,6 +13,7 @@
     <h2>Novo Fornecedor</h2>
     <fieldset class="row">
         <legend><strong>Dados do Fornecedor</strong></legend>
+        <br>
         <div class="col s12 m12">
             <i class="material-icons">account_circle</i>
             <label for="nome">Nome</label>

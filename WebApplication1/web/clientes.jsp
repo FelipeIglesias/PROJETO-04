@@ -13,7 +13,7 @@
     <h2>Novo Cliente</h2>
     <fieldset class="row">
         <legend><strong>Dados do Cliente</strong></legend>
-        <div class="col s12 m12">        
+        <div class="col s12 m12">
             <label for="nome">Nome</label>
             <input type="text" name="nome" required/>
         </div>
