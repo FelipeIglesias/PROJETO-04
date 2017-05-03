@@ -1,8 +1,42 @@
-<%-- any content can be specified here e.g.: --%>
-<%@ page pageEncoding="UTF-8" %>
-<nav>
-    <ul>
-        <a href="clientes.jsp">Clientes</a>
-        <a href="fornecedor.jsp">Fornecedor</a>
-    </ul>
-</nav>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grupo G3</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+        <link rel="stylesheet" href="css/estilo.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/mask.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    </head>
+    <header>
+        <br>
+        <nav class="container">
+        <% 
+            String active = "";
+            if (request.getServletPath().equalsIgnoreCase("/clientes.jsp") || request.getServletPath().equalsIgnoreCase("/alteraCliente.jsp")){
+                active = "cliente";
+            } else if (request.getServletPath().equalsIgnoreCase("/fornecedor.jsp") || request.getServletPath().equalsIgnoreCase("/alteraFornecedor.jsp")){
+                active = "fornecedor";
+            }
+        %>
+        <ul>
+            <% if (active == "cliente") { %>
+                <li class="active"><a href="clientes.jsp">Cliente</a></li>
+            <% } else { %> 
+                <li><a href="clientes.jsp">Cliente</a></li>
+            <% } %>
+            
+            <% if (active == "fornecedor") { %>
+                <li class="active"><a href="fornecedor.jsp">Fornecedor</a></li>
+            <% } else { %> 
+                <li><a href="fornecedor.jsp">Fornecedor</a></li>
+            <% } %>    
+        </ul>
+        </nav>
+    </header>
+        <body>
+        <div class="container">
