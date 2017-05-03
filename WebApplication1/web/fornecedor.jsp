@@ -7,33 +7,42 @@
 <%@page import="br.com.fatecpg.cadastro.Fornecedores"%>
 <%@page import="br.com.fatecpg.cadastro.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>POO</h1>
-        <div>
-            <fildset>
-                <legend><h3>Novo</h3></legend>
-                <form>
-                    Nome: <br>
-                    <input type="text" name="nome"/><br>
-                    CNPJ: <br>
-                    <input type="text" name="cnpj"/><br>
-                    Razão Social: <br>
-                    <input type="text" name="razaoSocial"/><br>
-                    Email: <br>
-                    <input type="text" name="email"/><br>
-                    Telefone: <br>
-                    <input type="text" name="telefone"/><br>
-                    Endereço: <br>
-                    <input type="text" name="endereco"/><br>
-                    <input type="submit" name="incluir" value="Incluir"/><br>
-                </form>
-            </fildset>
+<%@include file="WEB-INF/jspf/menu.jspf" %>
+
+<form>
+    <h2>Novo Fornecedor</h2>
+    <fieldset class="row">
+        <legend><strong>Dados do Fornecedor</strong></legend>
+        <div class="col s12 m12">        
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required/>
+        </div>
+        <div class="col s12 m6">        
+            <label for="cnpj">CNPJ</label>
+            <input type="text" name="cnpj" required/>
+        </div>
+        <div class="col s12 m6">        
+            <label for="razaoSocial">Razão Social</label>
+            <input type="text" name="razaoSocial" required/>
+        </div>
+        <div class="col s12 m6">        
+            <label for="email">Email</label>
+            <input type="email" name="email" required/>
+        </div>
+        <div class="col s12 m6">        
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required/>
+        </div>
+        <div class="col s12 m12">        
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" required/>
+        </div>
+        <div class="col s12 m12 center-align">
+            <input class="btn btn-large waves-effect waves-light" type="submit" name="incluir" value="Incluir"/>
+        </div>
+    </fildset>
+</form>
+
             <%
                 try {
                     if (request.getParameter("incluir") != null) {
@@ -66,8 +75,10 @@
             <%}%>
             <br/>
         </div>
+        <br>
         <div>
-            <table border="1">
+            <table class="centered highlight responsive-table">
+                <thead>
                 <tr>
                     <th>Indice</th>
                     <th>Nome</th>
@@ -78,6 +89,7 @@
                     <th>Endereço</th>
                     <th>Comandos</th>
                 </tr>
+                </thead>
                 <%for (int i = 0; i < Database.getFornecedores().size(); i++) {%>
                 <%Fornecedores f = Database.getFornecedores().get(i);%>
                 <tr>
@@ -91,13 +103,16 @@
                     <td>
                         <form>
                             <input type="hidden" name="id" value="<%=i%>"/>
-                            <input type="submit" name="excluir" value="Excluir"/>
-                            <input type="submit" name="alterar" value="Alterar">
+                            <input type="submit" name="excluir" value="Excluir"
+                                   class="btn red waves-effect waves-light"/>
+                            <a href="alteraFornecedor.jsp"><input type="submit" 
+                                   name="alterar" value="Alterar" class="btn blue waves-effect waves-light">
                         </form>
                     </td>
                 </tr>
                 <%}%>
             </table>
         </div>
+        <%@include file="WEB-INF/jspf/rodape.jspf" %>
     </body>
 </html>
