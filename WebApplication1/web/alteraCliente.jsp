@@ -12,6 +12,7 @@
     <h2>Alterar Dados</h2>
     <fieldset class="row">
         <legend><strong>Altere os dados do cliente</strong></legend>
+        <br>
                     <%
                         String novoNome = request.getParameter("novoNome");
                         String novoCpf = request.getParameter("novoCpf");
@@ -31,27 +32,33 @@
                             Erro: <%= ex.getMessage()%>
                         </div>
                     <%}%>
-                    <div class="col s12 m12">        
+                    <div class="col s12 m12">
+                        <i class="material-icons">account_circle</i>
                         <label for="nome">Nome</label>
                         <input type="text" name="novoNome" value="<%=Database.clt.getNome()%>" required/>
                     </div>
                     <div class="col s12 m6">
+                        <i class="material-icons">assignment_ind</i>
                         <label for="cpf">CPF</label>
                         <input type="text" name="novoCpf" value="<%=Database.clt.getCpf()%>" required/>
                     </div>
                     <div class="col s12 m6">
+                        <i class="material-icons">assignment_ind</i>
                         <label for="rg">RG</label>
                         <input type="text" name="novoRg" value="<%=Database.clt.getRg()%>" required/>
                     </div>
                     <div class="col s12 m6">
+                        <i class="material-icons ">email</i>
                         <label for="email">Email</label>
                         <input type="email" name="novoEmail" value="<%=Database.clt.getEmail()%>" required/>
                     </div>
                     <div class="col s12 m6">
+                        <i class="material-icons ">phone</i>
                         <label for="telefone">Telefone</label>
                         <input type="text" name="novoTelefone" value="<%=Database.clt.getTelefone()%>" required/>
                     </div>
                     <div class="col s12 m12">
+                        <i class="material-icons ">location_on</i>
                         <label for="edenreco">Endereço</label>
                         <input type="text" name="novoEndereco" value="<%=Database.clt.getEndereco()%>" required/>
                     </div>
