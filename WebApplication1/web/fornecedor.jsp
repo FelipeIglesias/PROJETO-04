@@ -13,33 +13,41 @@
     <h2>Novo Fornecedor</h2>
     <fieldset class="row">
         <legend><strong>Dados do Fornecedor</strong></legend>
-        <div class="col s12 m12">        
+        <div class="col s12 m12">
+            <i class="material-icons">account_circle</i>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" required/>
+            <input type="text" name="nome"  required />
         </div>
-        <div class="col s12 m6">        
+        <div class="col s12 m6">  
+            <i class="material-icons">assignment_ind</i>
             <label for="cnpj">CNPJ</label>
             <input type="text" name="cnpj" required/>
         </div>
-        <div class="col s12 m6">        
+        <div class="col s12 m6">
+            <i class="material-icons">perm_identity</i>        
             <label for="razaoSocial">Razão Social</label>
             <input type="text" name="razaoSocial" required/>
         </div>
-        <div class="col s12 m6">        
+        <div class="col s12 m6">
+            <i class="material-icons ">email</i>        
             <label for="email">Email</label>
             <input type="email" name="email" required/>
         </div>
-        <div class="col s12 m6">        
+        <div class="col s12 m6">
+            <i class="material-icons ">phone</i>
             <label for="nome">Telefone</label>
             <input type="text" name="telefone" required/>
         </div>
-        <div class="col s12 m12">        
+        <div class="col s12 m12">
+            <i class="material-icons ">location_on</i>
             <label for="nome">Endereço</label>
             <input type="text" name="endereco" required/>
         </div>
         <div class="col s12 m12 center-align">
             <input class="btn btn-large waves-effect waves-light" type="submit" name="incluir" value="Incluir"/>
         </div>
+    </form>
+  </div>
     </fildset>
 </form>
 
