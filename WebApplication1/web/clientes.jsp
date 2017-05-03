@@ -13,27 +13,34 @@
     <h2>Novo Cliente</h2>
     <fieldset class="row">
         <legend><strong>Dados do Cliente</strong></legend>
+        <br>
         <div class="col s12 m12">
+            <i class="material-icons">account_circle</i>
             <label for="nome">Nome</label>
             <input type="text" name="nome" required/>
         </div>
         <div class="col s12 m6">
+            <i class="material-icons">assignment_ind</i>
             <label for="cpf">CPF</label>
             <input type="text" name="cpf" required/>
         </div>
         <div class="col s12 m6">
+            <i class="material-icons">assignment_ind</i>
             <label for="rg">RG</label>
             <input type="text" name="rg" required/>
         </div>
         <div class="col s12 m6">
+            <i class="material-icons ">email</i>
             <label for="email">Email</label>
             <input type="email" name="email" required/>
         </div>
         <div class="col s12 m6">
+            <i class="material-icons ">phone</i>
             <label for="telefone">Telefone</label>
             <input type="text" name="telefone" required/>
         </div>            
         <div class="col s12 m12">
+            <i class="material-icons ">location_on</i>
             <label for="edenreco">Endereço</label>
             <input type="text" name="endereco" required/>
         </div>
